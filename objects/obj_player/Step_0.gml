@@ -5,6 +5,8 @@ if(is_pause) {
 	return;
 }
 
+timer++;
+
 if(keyboard_check_pressed(vk_space)) {
 	var cmd_list = [
 		[eCmd.CharOn, spr_ch001],
@@ -22,10 +24,25 @@ if(keyboard_check_pressed(vk_space)) {
 var dx = keyboard_check(vk_left) ? -1 : (keyboard_check(vk_right) ? 1 : 0);
 var dy = keyboard_check(vk_up)   ? -1 : (keyboard_check(vk_down)  ? 1 : 0);
 
-var spd = 8;
+var spd = 4;
+is_run = true;
 if(dx == 0 and dy == 0) {
 	spd = 0;
+	is_run = false;
 }
+if(dx < 0) {
+	_dir = eDir.Left;
+}
+if(dx > 0) {
+	_dir = eDir.Right;
+}
+if(dy < 0) {
+	_dir = eDir.Up;
+}
+if(dy > 0) {
+	_dir = eDir.Down;
+}
+
 var dir = point_direction(0, 0, dx, dy);
 
 var vx = lengthdir_x(spd, dir);
