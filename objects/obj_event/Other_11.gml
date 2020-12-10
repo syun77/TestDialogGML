@@ -10,8 +10,20 @@ while(is_exit = false) {
 	
 	var cmd = cmd_list[cmd_idx];
 	if(is_string(cmd)) {
-		// text.
-		cmd = [eCmd.Message, cmd];
+		var c = string_char_at(cmd, 1);
+		switch(c) {
+		case "*":
+			cmd = [eCmd.Label, cmd];
+			break;
+		case ">":
+			var label = string_replace(cmd, ">", "*");
+			cmd = [eCmd.Goto, label];
+			break;
+		default:
+			// text.
+			cmd = [eCmd.Message, cmd];
+			break;
+		}
 	}
 	if(is_array(cmd) == false) {
 		continue; // can't parse.

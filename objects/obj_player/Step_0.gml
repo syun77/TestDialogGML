@@ -9,22 +9,29 @@ timer++;
 
 if(keyboard_check_pressed(vk_space)) {
 	var cmd_list = [
-		[eCmd.Select, "GameMaker Studio2", "gms2", "RPGツクール", "rpgmaker", "ウディタ", "wolfeditor"],
+		[eCmd.Select, "GameMaker Studio2", "*gms2", "RPGツクール", "*rpgmaker", "ウディタ", "*wolfeditor"],
 		
-		[eCmd.Label, "gms2"],
+		//[eCmd.Label, "gms2"],
+		"*gms2",
 		"GameMaker Studio2を選びました",
-		[eCmd.Goto, "end"],
+		//[eCmd.Goto, "end"],
+		">end",
 		
-		[eCmd.Label, "rpgmaker"],
+		//[eCmd.Label, "rpgmaker"],
+		"*rpgmaker",
 		"RPGツクールを選びました",
-		[eCmd.Goto, "end"],
+		//[eCmd.Goto, "end"],
+		">end",
 		
-		[eCmd.Label, "wolfeditor"],
+		//[eCmd.Label, "wolfeditor"],
+		"*wolfeditor",
 		"ウディタを選びました",
-		[eCmd.Goto, "end"],		
+		//[eCmd.Goto, "end"],		
+		">end",
 		
-		[eCmd.Label, "end"],
-		"end."
+		//[eCmd.Label, "end"],
+		"*end",
+		"イベント終了"
 		
 		//[eCmd.Goto, "hoge"],
 		//[eCmd.CharOn, spr_ch001],
