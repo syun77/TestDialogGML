@@ -1,0 +1,2 @@
+# TestDialogGML
+GameMakerで会話イベントを作成するサンプルプロジェクト
