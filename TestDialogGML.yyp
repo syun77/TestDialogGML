@@ -2,8 +2,12 @@
   "resources": [
     {"id":{"name":"fnt_jp","path":"fonts/fnt_jp/fnt_jp.yy",},"order":0,},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":0,},
+    {"id":{"name":"scr_event","path":"scripts/scr_event/scr_event.yy",},"order":0,},
     {"id":{"name":"obj_event","path":"objects/obj_event/obj_event.yy",},"order":0,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":1,},
+    {"id":{"name":"spr_ch003","path":"sprites/spr_ch003/spr_ch003.yy",},"order":2,},
+    {"id":{"name":"spr_ch002","path":"sprites/spr_ch002/spr_ch002.yy",},"order":1,},
+    {"id":{"name":"spr_ch001","path":"sprites/spr_ch001/spr_ch001.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -37,6 +41,7 @@
     {"folderPath":"folders/Rooms.yy","order":10,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sequences.yy","order":11,"resourceVersion":"1.0","name":"Sequences","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/ch.yy","order":1,"resourceVersion":"1.0","name":"ch","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
