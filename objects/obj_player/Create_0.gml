@@ -25,7 +25,7 @@ get_subimg = function() {
 			[14, 15]
 		];
 		var tbl = run_tbl[_dir];
-		var idx = int64(timer%16 < 8);
+		var idx = (timer%16 < 8) ? 0 : 1;
 		return tbl[idx];
 	}
 	else {
@@ -36,7 +36,7 @@ get_subimg = function() {
 			[12, 13]
 		];
 		var tbl = standby_tbl[_dir];
-		var idx = int64(timer%32 < 16);
+		var idx = (timer%32 < 16) ? 0 : 1;
 		return tbl[idx];
 	}
 };

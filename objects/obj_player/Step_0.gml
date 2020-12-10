@@ -21,8 +21,8 @@ if(keyboard_check_pressed(vk_space)) {
 }
 
 
-var dx = keyboard_check(vk_left) ? -1 : (keyboard_check(vk_right) ? 1 : 0);
-var dy = keyboard_check(vk_up)   ? -1 : (keyboard_check(vk_down)  ? 1 : 0);
+var dx = keyboard_check(vk_right) - keyboard_check(vk_left);
+var dy = keyboard_check(vk_down)  - keyboard_check(vk_up);
 
 var spd = 4;
 is_run = true;
@@ -47,6 +47,28 @@ var dir = point_direction(0, 0, dx, dy);
 
 var vx = lengthdir_x(spd, dir);
 var vy = lengthdir_y(spd, dir);
+
+var tilemap = layer_tilemap_get_id("Tiles_Hit");
+var xedge = dx > 0 ? bbox_right : bbox_left;
+if(tilemap_get_at_pixel(tilemap, xedge+vx, bbox_top) != 0 || tilemap_get_at_pixel(tilemap, xedge+vx, bbox_bottom) != 0) {
+	if(vx > 0) {
+		x = x - (x mod spd);
+	}
+	else if(vx < 0) {
+		x = x + (x mod spd);
+	}
+	vx = 0;
+}
+var yedge = dy > 0 ? bbox_bottom : bbox_top;
+if(tilemap_get_at_pixel(tilemap, bbox_left, yedge+vy) != 0 || tilemap_get_at_pixel(tilemap, bbox_right, yedge+vy) != 0) {
+	if(vy > 0) {
+		y = y - (y mod spd);
+	}
+	else if(vy < 0) {
+		y = y + (y mod spd);
+	}
+	vy = 0;
+}
 
 x += vx;
 y += vy;
