@@ -9,12 +9,31 @@ timer++;
 
 if(keyboard_check_pressed(vk_space)) {
 	var cmd_list = [
-		[eCmd.CharOn, spr_ch001],
-		"春はあけぼの。",
-		[eCmd.CharOn, spr_ch002],
-		"やうやう白くなりゆく山際、少し明かりて、#紫だちたる雲の細くたなびきたる。",
-		[eCmd.CharOff],
-		"end.",
+		[eCmd.Select, "GameMaker Studio2", "gms2", "RPGツクール", "rpgmaker", "ウディタ", "wolfeditor"],
+		
+		[eCmd.Label, "gms2"],
+		"GameMaker Studio2を選びました",
+		[eCmd.Goto, "end"],
+		
+		[eCmd.Label, "rpgmaker"],
+		"RPGツクールを選びました",
+		[eCmd.Goto, "end"],
+		
+		[eCmd.Label, "wolfeditor"],
+		"ウディタを選びました",
+		[eCmd.Goto, "end"],		
+		
+		[eCmd.Label, "end"],
+		"end."
+		
+		//[eCmd.Goto, "hoge"],
+		//[eCmd.CharOn, spr_ch001],
+		//"春はあけぼの。",
+		//[eCmd.CharOn, spr_ch002],
+		//[eCmd.Label, "hoge"],
+		//"やうやう白くなりゆく山際、少し明かりて、#紫だちたる雲の細くたなびきたる。",
+		//[eCmd.CharOff],
+		//"end.",
 	];
 	
 	event_start(cmd_list);
